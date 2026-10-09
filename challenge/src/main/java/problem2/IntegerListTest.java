@@ -25,6 +25,7 @@ public class IntegerListTest
 //--------------------------------------
     public static void dispatch(int choice)
     {
+        Scanner scan=new Scanner(System.in);//for cases 3 and 4
         int loc;
         switch(choice)
         {
@@ -40,6 +41,21 @@ public class IntegerListTest
             case 2:
                 list.print();
                 break;
+            case 3:
+                System.out.print("Enter the new value: ");
+                int newVal=scan.nextInt();
+                list.addElement(newVal);
+                break;
+            case 4:
+                System.out.print("Enter the value to remove: ");
+                int firstVal=scan.nextInt();
+                list.removeFirst(firstVal);
+                break;
+            case 5:
+                System.out.print("Enter the value to remove: ");
+                int val=scan.nextInt();
+                list.removeAll(val);
+                break;
             default:
                 System.out.println("Sorry, invalid choice");
         }
@@ -54,6 +70,10 @@ public class IntegerListTest
         System.out.println("0: Quit");
         System.out.println("1: Create a new list (** do this first!! **)");
         System.out.println("2: Print the list");
+        System.out.println("3: Add a new element to the list");
+        System.out.println("4: remove element from the list");
+        System.out.println("5: remove all occurences of an element from the list");
+
         System.out.print("\nEnter your choice: ");
     }
 }
